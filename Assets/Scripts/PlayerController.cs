@@ -21,6 +21,13 @@ public class PlayerController : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public Vector2 getVelocity()
+    {
+        return rigidbody2D.velocity;
+    }
+
+    Vector2 newVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("Horizontal: " + horizontalMovement + ", Vertical: " + verticalMovement);
 
-        Vector2 newVelocity = new Vector2(horizontalMovement, verticalMovement);
+        newVelocity = new Vector2(horizontalMovement, verticalMovement);
         rigidbody2D.velocity = newVelocity * magnitude;
         //Debug.Log("Vector: " + rigidbody2D.velocity);
 
